@@ -1,10 +1,10 @@
 # uxrd
 
-A X-ray diffraction library with some usefull functions. 
+A X-ray diffraction library with some usefull functions.
 
 ## Installation
 
-TBA
+clone using git and install
 
 ```bash
 git clone https://github.com/jonasangstrom/uxrd.git
@@ -25,4 +25,4 @@ uxrd.write_dat(dat_path, data) # writes datfile
 
 ## License
  Jonas Ångström 2020
-[MIT] (https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/)
