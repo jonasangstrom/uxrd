@@ -11,7 +11,7 @@ def read_brml(path, as_text=False):
             xml_content = xml_file.readlines()
     xml_tree = ET.fromstringlist(xml_content)
     data = xml_tree.find('DataRoutes').find('DataRoute').findall('Datum')
-    data_list = [datum.text.split(',') for datum in data]
+    data_list = (datum.text.split(',') for datum in data)
     dat_data = [[two_theta, I] for _, _, two_theta, _, I in data_list]
     if as_text:
         return dat_data
