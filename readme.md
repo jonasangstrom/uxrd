@@ -1,6 +1,6 @@
 # uxrd
 
-A X-ray diffraction library with some usefull functions.
+A X-ray diffraction library with some usefull functions. 
 
 ## Installation
 
