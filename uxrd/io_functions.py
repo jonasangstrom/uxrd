@@ -33,9 +33,7 @@ def write_dat(dat_filename, dat_data, sep=' '):
 def convert_all_brml_in_folder(path=os.getcwd()):
     items = os.listdir(path)
     for item in items:
-        print(item[-5:])
         if item[-5:] == '.brml':
             dat_data = read_brml('{}\\{}'.format(path, item))
-            print(dat_data)
             dat_path = '{}\\{}.dat'.format(path, item[:-5])
             write_dat(dat_path, dat_data)
