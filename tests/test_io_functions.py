@@ -1,5 +1,6 @@
-from uxrd.io_functions import read_brml, write_dat
+from uxrd.io_functions import read_brml, write_dat, convert_all_brml_in_folder
 from numpy.testing import assert_allclose
+import os
 
 
 def test_read_brml_astext():
@@ -25,6 +26,7 @@ def test_write_dat_text():
         line = datfile.readline().split()
         assert_allclose(float(line[0]), 5.0, rtol=0.00001)
     assert_allclose(float(line[1]), 5362, rtol=0.00001)
+    os.remove(dat_filename)
 
 
 def test_write_dat_float():
@@ -36,3 +38,14 @@ def test_write_dat_float():
         line = datfile.readline().split()
     assert_allclose(float(line[0]), 5.0, rtol=0.00001)
     assert_allclose(float(line[1]), 5362, rtol=0.00001)
+    os.remove(dat_filename)
+
+
+def test_convert_all_brml():
+    convert_all_brml_in_folder()
+    dat_filename = 'a_brml.dat'
+    with open(dat_filename, 'r') as datfile:
+        line = datfile.readline().split()
+    assert_allclose(float(line[0]), 5.0, rtol=0.00001)
+    assert_allclose(float(line[1]), 5362, rtol=0.00001)
+    os.remove(dat_filename)
